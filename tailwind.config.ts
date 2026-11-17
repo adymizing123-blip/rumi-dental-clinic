@@ -6,20 +6,21 @@ const config: Config = {
     container: { center: true, padding: "1.25rem", screens: { "2xl": "1240px" } },
     extend: {
       colors: {
+        // Colours come from CSS variables (globals.css): blue in the CRM, teal on the public website (.site-theme).
         brand: {
-          50: "#eef5ff",
-          100: "#d9e8ff",
-          200: "#bcd5ff",
-          300: "#8db8ff",
-          400: "#5a93f5",
-          500: "#3573e8",
-          600: "#2558c9",
-          700: "#2145a3",
-          800: "#1f3b82",
-          900: "#1c3267",
-          950: "#111d3d",
+          50: "rgb(var(--brand-50) / <alpha-value>)",
+          100: "rgb(var(--brand-100) / <alpha-value>)",
+          200: "rgb(var(--brand-200) / <alpha-value>)",
+          300: "rgb(var(--brand-300) / <alpha-value>)",
+          400: "rgb(var(--brand-400) / <alpha-value>)",
+          500: "rgb(var(--brand-500) / <alpha-value>)",
+          600: "rgb(var(--brand-600) / <alpha-value>)",
+          700: "rgb(var(--brand-700) / <alpha-value>)",
+          800: "rgb(var(--brand-800) / <alpha-value>)",
+          900: "rgb(var(--brand-900) / <alpha-value>)",
+          950: "rgb(var(--brand-950) / <alpha-value>)",
         },
-        ink: "#0c1633",
+        ink: "rgb(var(--ink) / <alpha-value>)",
         blush: "#ffb4a2",
         coral: "#f2735b",
       },
@@ -29,7 +30,9 @@ const config: Config = {
       },
       boxShadow: {
         soft: "0 10px 40px -12px rgba(12, 22, 51, 0.25)",
-        glow: "0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px -20px rgba(53, 115, 232, 0.55)",
+        glow: "0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px -20px rgb(var(--brand-500) / 0.55)",
+        card: "0 4px 10px rgba(20, 33, 61, 0.06), 0 16px 32px -12px rgba(20, 33, 61, 0.18)",
+        lift: "0 10px 24px rgba(20, 33, 61, 0.08), 0 36px 70px -24px rgba(20, 33, 61, 0.32)",
       },
       keyframes: {
         "gradient-shift": {

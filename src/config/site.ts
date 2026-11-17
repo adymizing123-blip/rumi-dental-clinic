@@ -25,8 +25,8 @@ export const site = {
   ],
   hero: {
     // DUMMY stock photo (Unsplash, free licence). Replace with a real photo of the clinic or Dr. Daniyal.
-    image: stock("photo-1606811971618-4486d14f3f99", 1100),
-    imageAlt: "Smiling patient during a dental check-up",
+    image: stock("photo-1777331903190-341a3dd0441b", 1600),
+    imageAlt: "Dentist talking a patient through her treatment",
     eyebrow: "Now booking new patients",
     title: "Confident smiles start with gentle care.",
     titleHighlight: "gentle care", // part of the title shown in brand colour
@@ -63,8 +63,8 @@ export const doctors: { name: string; role: string; degree: string; years?: numb
 
 /** About section. Images are DUMMY stock photos; swap for real photos of the clinic. */
 export const about = {
-  image: stock("photo-1777331903190-341a3dd0441b", 1000),
-  imageAlt: "Dentist explaining a treatment plan to a patient",
+  image: stock("photo-1606811971618-4486d14f3f99", 1000),
+  imageAlt: "Smiling patient during a dental check-up",
   sideImage: stock("photo-1629909613654-28e377c37b09", 600),
   sideImageAlt: "Modern treatment room with dental chair",
   eyebrow: "About the clinic",
@@ -74,6 +74,35 @@ export const about = {
     "Under one roof you get check-ups, cosmetic work, braces, implants and emergency care, with sterilised instruments for every patient and modern low-pain techniques.",
   ],
   points: ["Clear prices before treatment", "Instruments sterilised for every patient", "Digital X-rays and 3D scans", "Same-day emergency help"],
+};
+
+/** Numbers band under the hero. Only facts that are true for the clinic (no invented patient counts or ratings). */
+export const facts = [
+  { value: "6 days", label: "Open Monday to Saturday" },
+  { value: `${services.length}`, label: "Treatments under one roof" },
+  { value: "Same day", label: "Help for dental emergencies" },
+  { value: `Rs ${services[0].from.toLocaleString("en-US")}`, label: "Check-up & cleaning from" },
+];
+
+/** "Why patients choose us" (dark section). Image is a DUMMY stock photo. */
+export const why = {
+  title: `Why patients choose ${site.shortName} Dental`,
+  text: "Good care starts with being listened to. Your dentist explains what they see, what it costs and what your options are before anything starts.",
+  image: stock("photo-1588776814546-daab30f310ce", 900),
+  imageAlt: "Dentists treating a patient in a clean treatment room",
+  items: [
+    { icon: "award", title: "Experienced dentists", text: "Every plan is made and explained by a qualified dentist." },
+    { icon: "wallet", title: "Fees shared upfront", text: "You know the cost before any test or treatment starts." },
+    { icon: "clock", title: "Short waiting times", text: "Book on WhatsApp and come in close to your time." },
+    { icon: "shield", title: "Clean, modern clinic", text: "Instruments sterilised for every patient, in a calm setting." },
+  ],
+} as const;
+
+/** Call-to-action band above the booking form. Background is a DUMMY stock photo. */
+export const cta = {
+  title: "Ready to see a dentist?",
+  text: "Pick a day and time that suits you, send the form and we will confirm your appointment on WhatsApp.",
+  image: stock("photo-1629909613654-28e377c37b09", 1600),
 };
 
 /** DUMMY stock photos (Unsplash, free licence). Replace with real photos of the clinic. */

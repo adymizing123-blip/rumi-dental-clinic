@@ -44,7 +44,7 @@ function TiltCard({ children }: { children: React.ReactNode }) {
   const rotateY = useSpring(useTransform(mx, [0, 1], [-6, 6]), { stiffness: 200, damping: 18 });
   const spotlight = useTransform(
     [mx, my],
-    ([x, y]: number[]) => `radial-gradient(320px circle at ${x * 100}% ${y * 100}%, rgba(90,147,245,0.16), transparent 60%)`,
+    ([x, y]: number[]) => `radial-gradient(320px circle at ${x * 100}% ${y * 100}%, rgb(var(--brand-400) / 0.16), transparent 60%)`,
   );
 
   function onMove(e: MouseEvent<HTMLDivElement>) {
@@ -78,7 +78,7 @@ function TiltCard({ children }: { children: React.ReactNode }) {
 
 export function Services() {
   return (
-    <section id="services" className="relative py-24 sm:py-32">
+    <section id="services" className="relative bg-brand-50 py-24 sm:py-32">
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="section-eyebrow">Our treatments</span>

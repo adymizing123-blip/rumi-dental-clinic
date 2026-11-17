@@ -15,7 +15,7 @@ export function Booking() {
 
   return (
     <section id="book" className="relative overflow-hidden py-24 sm:py-32">
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#eef5ff_0%,#ffffff_45%,#f0f9ff_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-50 via-white to-brand-50" />
       <div className="container grid items-start gap-12 lg:grid-cols-[1fr_1.1fr]">
         <Reveal>
           <span className="section-eyebrow">Book a visit</span>

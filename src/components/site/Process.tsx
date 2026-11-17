@@ -11,7 +11,7 @@ export function Process() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 24 });
 
   return (
-    <section id="process" className="py-24 sm:py-32">
+    <section id="process" className="bg-brand-50 py-24 sm:py-32">
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="section-eyebrow">How it works</span>

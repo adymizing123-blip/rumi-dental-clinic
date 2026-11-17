@@ -4,6 +4,88 @@
 
 :root {
   color-scheme: light;
+  /* CRM palette (blue). RGB channels so Tailwind opacity modifiers work. */
+  --brand-50: 238 245 255;
+  --brand-100: 217 232 255;
+  --brand-200: 188 213 255;
+  --brand-300: 141 184 255;
+  --brand-400: 90 147 245;
+  --brand-500: 53 115 232;
+  --brand-600: 37 88 201;
+  --brand-700: 33 69 163;
+  --brand-800: 31 59 130;
+  --brand-900: 28 50 103;
+  --brand-950: 17 29 61;
+  --ink: 12 22 51;
+}
+
+/* Public website theme (teal, Archivo), modelled on the Pearl Dental demo. Set on the homepage wrapper only. */
+.site-theme {
+  --brand-50: 236 248 246;
+  --brand-100: 220 242 239;
+  --brand-200: 181 227 220;
+  --brand-300: 130 205 194;
+  --brand-400: 63 174 159;
+  --brand-500: 26 140 130;
+  --brand-600: 15 118 110;
+  --brand-700: 12 92 86;
+  --brand-800: 14 74 70;
+  --brand-900: 15 61 58;
+  --brand-950: 7 38 36;
+  --ink: 20 33 61;
+  --font-display: var(--font-archivo);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  background: #fbfcfa;
+}
+.site-theme .font-display,
+.site-theme .section-title {
+  font-stretch: 112%;
+  letter-spacing: -0.03em;
+}
+.site-theme .section-title {
+  font-weight: 770;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+.site-theme :is(.btn, .btn-brand, .btn-primary, .btn-ghost, .btn-outline) {
+  min-height: 50px;
+  border-radius: 12px;
+}
+/* Section label: short line + text instead of a pill */
+.site-theme .section-eyebrow {
+  background: transparent;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 650;
+  text-transform: none;
+  letter-spacing: normal;
+  color: rgb(var(--brand-600));
+}
+.site-theme .section-eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+.site-theme .section-eyebrow.is-light {
+  color: rgb(var(--brand-300));
+}
+
+/* Hero: faint grid that fades out from the top centre */
+.hero-grid {
+  opacity: 0.7;
+  background-image: linear-gradient(rgb(var(--brand-600) / 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--brand-600) / 0.09) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at 50% 0%, #000 30%, transparent 75%);
+}
+.why-glow {
+  background: radial-gradient(circle, rgb(var(--brand-500) / 0.55), transparent 65%);
+}
+.cta-overlay {
+  background: linear-gradient(100deg, rgb(var(--brand-700) / 0.97) 0%, rgb(var(--brand-600) / 0.86) 55%, rgb(var(--brand-600) / 0.5) 100%);
 }
 
 html {

@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function Gallery() {
   return (
-    <section id="clinic" className="py-24 sm:py-32">
+    <section id="clinic" className="bg-brand-50 py-24 sm:py-32">
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="section-eyebrow">Inside the clinic</span>

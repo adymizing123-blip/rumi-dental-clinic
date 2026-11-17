@@ -7,7 +7,7 @@ export function Testimonials() {
   const row = [...testimonials, ...testimonials];
   return (
     <section id="reviews" className="relative overflow-hidden bg-brand-950 py-24 text-white sm:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(90,147,245,0.25),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgb(var(--brand-400)/0.25),transparent_60%)]" />
       <div className="container relative">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-200">

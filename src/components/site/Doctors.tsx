@@ -11,7 +11,7 @@ const gradients = [
 
 export function Doctors() {
   return (
-    <section id="doctors" className="relative overflow-hidden bg-brand-50/50 py-24 sm:py-32">
+    <section id="doctors" className="relative overflow-hidden py-24 sm:py-32">
       <div className="absolute -right-32 top-10 h-96 w-96 rounded-full bg-brand-200/40 blur-3xl" />
       <div className="container relative">
         <Reveal className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">

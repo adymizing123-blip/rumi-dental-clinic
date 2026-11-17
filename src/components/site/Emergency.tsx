@@ -7,7 +7,7 @@ export function Emergency() {
     <section id="emergency" className="py-6 sm:py-10">
       <div className="container">
         <Reveal>
-          <div className="grain relative overflow-hidden rounded-[2rem] bg-[linear-gradient(120deg,#111d3d_0%,#1f3b82_60%,#2558c9_100%)] p-8 text-white sm:p-12">
+          <div className="grain relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-950 via-brand-800 to-brand-600 p-8 text-white sm:p-12">
             <div className="absolute -right-10 -top-10 h-56 w-56 rounded-full bg-brand-400/30 blur-3xl" />
             <div className="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
               <div>
