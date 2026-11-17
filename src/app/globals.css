@@ -24,6 +24,9 @@ body {
   .btn-brand {
     @apply btn bg-brand-600 text-white hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-glow;
   }
+  .btn-outline {
+    @apply btn border border-slate-300 bg-white text-ink hover:-translate-y-0.5 hover:border-brand-400 hover:text-brand-700 hover:shadow-soft;
+  }
   .btn-ghost {
     @apply btn border border-white/40 text-white backdrop-blur hover:border-white hover:bg-white/10;
   }

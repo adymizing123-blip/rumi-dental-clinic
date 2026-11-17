@@ -1,33 +1,30 @@
-"use client";
-
-import { useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ShieldCheck } from "lucide-react";
 import { about } from "@/config/site";
 import { SmartImage } from "@/components/ui-skeleton";
 import { Reveal } from "./Reveal";
 
-function BeforeAfter() {
-  const [pos, setPos] = useState(50);
+/** Two overlapping photos with a small trust badge. */
+function PhotoCollage() {
   return (
-    <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-soft ring-1 ring-slate-200">
-      <SmartImage src={about.after} alt="Teeth after whitening (dummy)" className="absolute inset-0" />
-      <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
-        <SmartImage src={about.before} alt="Teeth before whitening (dummy)" className="h-full w-full" />
-      </div>
-      <div className="pointer-events-none absolute inset-y-0 w-0.5 bg-white shadow" style={{ left: `${pos}%` }}>
-        <span className="absolute left-1/2 top-1/2 grid h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white text-xs font-bold text-brand-700 shadow-soft">&lt;&gt;</span>
-      </div>
-      <span className="absolute left-4 top-4 rounded-full bg-ink/60 px-3 py-1 text-xs font-semibold text-white backdrop-blur">Before</span>
-      <span className="absolute right-4 top-4 rounded-full bg-brand-600/90 px-3 py-1 text-xs font-semibold text-white backdrop-blur">After</span>
-      <input
-        type="range"
-        min={0}
-        max={100}
-        value={pos}
-        onChange={(e) => setPos(Number(e.target.value))}
-        aria-label="Compare before and after"
-        className="absolute inset-0 h-full w-full cursor-ew-resize opacity-0"
+    <div className="relative pb-16 pr-10 sm:pr-16">
+      <div aria-hidden className="absolute -left-6 -top-6 h-40 w-40 rounded-[2rem] bg-brand-100" />
+      <SmartImage
+        src={about.image}
+        alt={about.imageAlt}
+        className="relative aspect-[4/3] rounded-3xl shadow-soft ring-1 ring-slate-200/70"
       />
+      <div className="absolute bottom-0 right-0 w-[42%] overflow-hidden rounded-3xl shadow-soft ring-8 ring-white">
+        <SmartImage src={about.sideImage} alt={about.sideImageAlt} className="aspect-square" />
+      </div>
+      <div className="absolute bottom-6 left-6 flex items-center gap-3 rounded-2xl bg-white/95 p-3 pr-5 shadow-soft ring-1 ring-slate-200/70 backdrop-blur">
+        <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-white">
+          <ShieldCheck className="h-5 w-5" />
+        </span>
+        <div>
+          <p className="text-sm font-semibold text-ink">Hospital-grade hygiene</p>
+          <p className="text-xs text-slate-500">Sterilised for every patient</p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -35,10 +32,9 @@ function BeforeAfter() {
 export function About() {
   return (
     <section id="about" className="py-24 sm:py-32">
-      <div className="container grid items-center gap-14 lg:grid-cols-2">
+      <div className="container grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <Reveal>
-          <BeforeAfter />
-          <p className="mt-3 text-center text-xs text-slate-500">{about.note}</p>
+          <PhotoCollage />
         </Reveal>
         <Reveal delay={0.1}>
           <span className="section-eyebrow">{about.eyebrow}</span>
@@ -50,7 +46,7 @@ export function About() {
           </div>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {about.points.map((p) => (
-              <li key={p} className="flex items-start gap-2.5 text-sm font-medium text-ink">
+              <li key={p} className="flex items-start gap-2.5 rounded-xl bg-brand-50/60 p-3 text-sm font-medium text-ink">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" /> {p}
               </li>
             ))}

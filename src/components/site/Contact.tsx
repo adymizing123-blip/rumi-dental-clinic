@@ -5,7 +5,7 @@ import { Reveal } from "./Reveal";
 export function Contact() {
   const q = encodeURIComponent(site.address);
   return (
-    <section id="contact" className="bg-slate-50 py-24 sm:py-32">
+    <section id="contact" className="bg-brand-50/50 py-24 sm:py-32">
       <div className="container grid gap-10 lg:grid-cols-[1fr_1.3fr]">
         <Reveal>
           <span className="section-eyebrow">Visit us</span>

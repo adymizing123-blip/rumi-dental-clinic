@@ -5,13 +5,13 @@ import { Reveal } from "./Reveal";
 
 const gradients = [
   "from-brand-500 via-brand-600 to-brand-800",
-  "from-sky-500 via-brand-600 to-brand-900",
-  "from-brand-400 via-teal-600 to-emerald-800",
+  "from-brand-400 via-brand-600 to-brand-900",
+  "from-brand-600 via-brand-700 to-brand-900",
 ];
 
 export function Doctors() {
   return (
-    <section id="doctors" className="relative overflow-hidden bg-slate-50 py-24 sm:py-32">
+    <section id="doctors" className="relative overflow-hidden bg-brand-50/50 py-24 sm:py-32">
       <div className="absolute -right-32 top-10 h-96 w-96 rounded-full bg-brand-200/40 blur-3xl" />
       <div className="container relative">
         <Reveal className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -29,7 +29,9 @@ export function Doctors() {
             <Reveal key={d.name} delay={i * 0.1}>
               <article className="group relative overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200/70 transition-all duration-500 hover:-translate-y-2 hover:shadow-soft">
                 <div className={`relative grid aspect-[4/3] place-items-center overflow-hidden bg-gradient-to-br ${gradients[i % gradients.length]}`}>
-                  <SmartImage src={d.image} alt={d.name} className="absolute inset-0" imgClassName="transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0">
+                    <SmartImage src={d.image} alt={d.name} className="h-full w-full" imgClassName="transition-transform duration-700 group-hover:scale-105" />
+                  </div>
                   {d.years ? (
                     <span className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
                       <Award className="h-3.5 w-3.5" /> {d.years}+ years

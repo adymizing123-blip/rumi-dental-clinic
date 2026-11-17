@@ -1,3 +1,8 @@
+/** Free Unsplash stock photo URL (used for DUMMY images until the clinic's own photos are added). */
+function stock(id: string, width = 1200) {
+  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=80`;
+}
+
 /**
  * Everything clinic-specific for the public website lives here.
  * Change these values for each client; no other file needs editing for branding.
@@ -19,10 +24,12 @@ export const site = {
     { days: "Sunday", hours: "Closed" },
   ],
   hero: {
-    video: "/videos/hero.mp4",
-    poster: "/videos/hero-poster.jpg",
+    // DUMMY stock photo (Unsplash, free licence). Replace with a real photo of the clinic or Dr. Daniyal.
+    image: stock("photo-1606811971618-4486d14f3f99", 1100),
+    imageAlt: "Smiling patient during a dental check-up",
     eyebrow: "Now booking new patients",
     title: "Confident smiles start with gentle care.",
+    titleHighlight: "gentle care", // part of the title shown in brand colour
     subtitle:
       "Painless check-ups, whitening, braces and implants under one roof. Modern equipment, clear prices and dentists who take time to explain.",
   },
@@ -54,8 +61,12 @@ export const doctors: { name: string; role: string; degree: string; years?: numb
   { name: "Dr. Sana Malik", role: "Paediatric Dentist", degree: "BDS (sample)", years: 6, initials: "S", image: "/images/doctor-4.svg" },
 ];
 
-/** About section. Image paths are dummy SVGs in /public/images; swap for real photos. */
+/** About section. Images are DUMMY stock photos; swap for real photos of the clinic. */
 export const about = {
+  image: stock("photo-1777331903190-341a3dd0441b", 1000),
+  imageAlt: "Dentist explaining a treatment plan to a patient",
+  sideImage: stock("photo-1629909613654-28e377c37b09", 600),
+  sideImageAlt: "Modern treatment room with dental chair",
   eyebrow: "About the clinic",
   title: "A calm clinic that explains before it treats",
   text: [
@@ -63,16 +74,14 @@ export const about = {
     "Under one roof you get check-ups, cosmetic work, braces, implants and emergency care, with sterilised instruments for every patient and modern low-pain techniques.",
   ],
   points: ["Clear prices before treatment", "Instruments sterilised for every patient", "Digital X-rays and 3D scans", "Same-day emergency help"],
-  before: "/images/about-before.svg",
-  after: "/images/about-after.svg",
-  note: "Illustrative example. Results differ from person to person.",
 };
 
+/** DUMMY stock photos (Unsplash, free licence). Replace with real photos of the clinic. */
 export const gallery = [
-  { src: "/images/clinic-1.svg", alt: "Treatment room with dental chair" },
-  { src: "/images/clinic-2.svg", alt: "Reception desk" },
-  { src: "/images/clinic-3.svg", alt: "Sterilisation area" },
-  { src: "/images/clinic-4.svg", alt: "Waiting area" },
+  { src: stock("photo-1629909613654-28e377c37b09", 1200), alt: "Treatment room with dental chair" },
+  { src: stock("photo-1762625570087-6d98fca29531", 800), alt: "Waiting area" },
+  { src: stock("photo-1606811856475-5e6fcdc6e509", 800), alt: "Sterilised dental instruments" },
+  { src: stock("photo-1593022356769-11f762e25ed9", 800), alt: "Implant planning model" },
 ];
 
 export const emergency = {

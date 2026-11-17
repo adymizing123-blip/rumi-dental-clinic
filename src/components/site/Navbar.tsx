@@ -31,33 +31,23 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled ? "bg-white/85 py-3 shadow-sm backdrop-blur-xl" : "bg-transparent py-5",
+        scrolled ? "bg-white/90 py-3 shadow-sm backdrop-blur-xl" : "bg-transparent py-5",
       )}
     >
       {/* Info strip: visible at the top of the page, hides on scroll */}
-      <div className={cn("container hidden overflow-hidden text-xs text-white/85 transition-all duration-500 lg:flex lg:items-center lg:justify-between", scrolled ? "max-h-0 opacity-0" : "mb-3 max-h-8 opacity-100")}>
+      <div className={cn("container hidden overflow-hidden text-xs text-slate-500 transition-all duration-500 lg:flex lg:items-center lg:justify-between", scrolled ? "max-h-0 opacity-0" : "mb-3 max-h-8 opacity-100")}>
         <span className="flex items-center gap-4">
           <span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> {site.address}</span>
           <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" /> {site.timings[0].days}: {site.timings[0].hours}</span>
         </span>
-        <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="flex items-center gap-1.5 font-semibold text-white"><span className="h-1.5 w-1.5 rounded-full bg-coral" /> Emergency? Call {site.phone}</a>
+        <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="flex items-center gap-1.5 font-semibold text-ink hover:text-brand-700"><span className="h-1.5 w-1.5 rounded-full bg-rose-500" /> Emergency? Call {site.phone}</a>
       </div>
       <nav className="container flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5" aria-label={`${site.name} home`}>
-          <span
-            className={cn(
-              "grid h-10 w-10 place-items-center rounded-2xl font-display text-lg font-extrabold transition-colors",
-              scrolled ? "bg-brand-600 text-white" : "bg-white/15 text-white ring-1 ring-white/30 backdrop-blur",
-            )}
-          >
+          <span className="grid h-10 w-10 place-items-center rounded-2xl bg-brand-600 font-display text-lg font-extrabold text-white shadow-md shadow-brand-600/25">
             {site.shortName[0]}
           </span>
-          <span
-            className={cn(
-              "font-display text-lg font-bold tracking-tight transition-colors",
-              scrolled ? "text-ink" : "text-white",
-            )}
-          >
+          <span className="font-display text-lg font-bold tracking-tight text-ink">
             {site.name}
           </span>
         </Link>
@@ -67,10 +57,7 @@ export function Navbar() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className={cn(
-                  "group relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                  scrolled ? "text-slate-600 hover:text-brand-700" : "text-white/85 hover:text-white",
-                )}
+                className="group relative rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-brand-700"
               >
                 {l.label}
                 <span className="absolute inset-x-4 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-current transition-transform duration-300 group-hover:scale-x-100" />
@@ -82,14 +69,11 @@ export function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href={`tel:${site.phone.replace(/\s/g, "")}`}
-            className={cn(
-              "flex items-center gap-2 text-sm font-semibold transition-colors",
-              scrolled ? "text-ink" : "text-white",
-            )}
+            className="flex items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-brand-700"
           >
             <Phone className="h-4 w-4" /> {site.phone}
           </a>
-          <a href="#book" className={scrolled ? "btn-brand" : "btn-primary"}>
+          <a href="#book" className="btn-brand">
             Book appointment
           </a>
         </div>
@@ -97,7 +81,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className={cn("rounded-xl p-2 lg:hidden", scrolled ? "text-ink" : "text-white")}
+          className="rounded-xl p-2 text-ink lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >

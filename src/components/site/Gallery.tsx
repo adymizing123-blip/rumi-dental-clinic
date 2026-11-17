@@ -9,7 +9,7 @@ export function Gallery() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="section-eyebrow">Inside the clinic</span>
           <h2 className="section-title mt-4">Clean, calm and well equipped</h2>
-          <p className="mt-4 text-lg text-slate-600">A quick look at where your visit happens. These are dummy images until real photos are added.</p>
+          <p className="mt-4 text-lg text-slate-600">A quick look at where your visit happens. Sample photos are shown until the clinic’s own photos are added.</p>
         </Reveal>
         <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4">
           {gallery.map((g, i) => (
